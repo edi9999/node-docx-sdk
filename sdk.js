@@ -27,9 +27,9 @@ SDK.addTemplate=function(path,addTemplateCallback){
 	return SDK;
 }
 
-SDK.listTemplates=function(listTemplatesCallback) {
+SDK.getTemplates=function(getTemplatesCallback) {
 	r=request.get(endpoint+"/templates/?key="+secretKey, function (err, httpResponse, body) {
-		listTemplatesCallback();
+		getTemplatesCallback(body);
 	});
 }
 
