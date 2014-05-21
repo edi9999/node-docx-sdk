@@ -33,4 +33,18 @@ SDK.getTemplates=function(getTemplatesCallback) {
 	});
 }
 
+SDK.getTemplate=function(template,getTemplateCallback) {
+	r=request({method:"GET",url:endpoint+"/templates/"+template+"?key="+secretKey,encoding:'binary'}, function (err, httpResponse, body) {
+		buffer=new Buffer(body,'binary')
+		getTemplateCallback(buffer);
+	});
+}
+
+SDK.generate=function(template,data,generateCallback){
+	r=request({method:"POST",url:endpoint+"/generate/"+template+"?key="+secretKey,json:data,encoding:'binary'}, function (err, httpResponse, body) {
+		buffer=new Buffer(body,'binary')
+		generateCallback(buffer);
+	});
+}
+
 module.exports=SDK;
