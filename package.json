@@ -1,6 +1,6 @@
 {
   "name": "docxclient",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "DocxClient",
   "main": "index.js",
   "dependencies": {

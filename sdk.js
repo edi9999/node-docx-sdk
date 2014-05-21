@@ -11,19 +11,18 @@ SDK.setKey=function(key){
 	return SDK;
 }
 
-SDK.addTemplate=function(path,addTemplateCallback){
-	r=request.post(endpoint+"/templates/?key="+secretKey, function (err, httpResponse, body) {
+SDK.addTemplate=function(readableStream,filename,addTemplateCallback){
+	r=request.post(endpoint+"/templates/?filename="+filename+"&key="+secretKey, function (err, httpResponse, body) {
   	  if (err) {
     	return console.error('upload failed:', err);
   	  }
-  	  console.log('Upload successful!  Server responded with:', body);
 	  if ( addTemplateCallback!=undefined ) {
-	  	  addTemplateCallback();
+	  	  addTemplateCallback(body);
 	  }
 	});
 
 	var form = r.form()
-	form.append('file', fs.createReadStream(path))
+	form.append('file', readableStream)
 	return SDK;
 }
 
