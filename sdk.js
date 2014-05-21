@@ -3,7 +3,7 @@ var request=require('request'),
 
 SDK={};
 
-var endpoint="http://localhost:3000/api";
+var endpoint="http://docxgenapi.herokuapp.com/api/v1";
 var secretKey=null;
 
 SDK.setKey=function(key){
