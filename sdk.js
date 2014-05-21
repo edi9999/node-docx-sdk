@@ -12,7 +12,7 @@ SDK.setKey=function(key){
 }
 
 SDK.addTemplate=function(readableStream,filename,addTemplateCallback){
-	r=request.post(endpoint+"/templates/?filename="+filename+"&key="+secretKey, function (err, httpResponse, body) {
+	r=request.post(endpoint+"/templates?filename="+filename+"&key="+secretKey, function (err, httpResponse, body) {
   	  if (err) {
     	return console.error('upload failed:', err);
   	  }
@@ -27,7 +27,7 @@ SDK.addTemplate=function(readableStream,filename,addTemplateCallback){
 }
 
 SDK.getTemplates=function(getTemplatesCallback) {
-	r=request.get(endpoint+"/templates/?key="+secretKey, function (err, httpResponse, body) {
+	r=request.get(endpoint+"/templates?key="+secretKey, function (err, httpResponse, body) {
 		getTemplatesCallback(body);
 	});
 }
