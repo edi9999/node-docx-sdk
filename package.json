@@ -1,11 +1,12 @@
 {
-  "name": "docxclient",
-  "version": "0.1.0",
+  "name": "docxsdk",
+  "version": "1.0.0",
   "description": "DocxClient",
   "main": "index.js",
   "dependencies": {
     "request": "^2.35.0"
   },
+  "main": "sdk.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
